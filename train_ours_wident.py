@@ -227,8 +227,8 @@ class Train(object):
                                                       (args.nlevels - 1) * np.ones([args.batch_size, sel_blocks, 1, 1, 1], np.float32))
                     print('Epoch {:03d}, cifar: {:.4f}, tiny: {:.4f}, stl: {:.4f}'
                           .format(step // args.num_batches, cifar_acc, tiny_acc, stl_acc))
-                    print >> f, ('Epoch {:03d}, cifar: {:.4f}, tiny: {:.4f}, stl: {:.4f}'
-                                 .format(step // args.num_batches, cifar_acc, tiny_acc, stl_acc))
+                    print('Epoch {:03d}, cifar: {:.4f}, tiny: {:.4f}, stl: {:.4f}'
+                                 .format(step // args.num_batches, cifar_acc, tiny_acc, stl_acc), file = f)
                     if mp1_1 < cifar_acc:
                         mp1_1 = cifar_acc
                         mp1_2 = tiny_acc
@@ -266,10 +266,10 @@ class Train(object):
               '                 {:.4f} / {:.4f} / {:.4f} \n'
               '                 {:.4f} / {:.4f} / {:.4f}'
               .format(mp1_1, mp1_2, mp1_3, mp2_1, mp2_2, mp2_3, mp3_1, mp3_2, mp3_3))
-        print >> f, ('max_performance: {:.4f} / {:.4f} / {:.4f} \n'
+        print('max_performance: {:.4f} / {:.4f} / {:.4f} \n'
                      '                 {:.4f} / {:.4f} / {:.4f} \n'
                      '                 {:.4f} / {:.4f} / {:.4f}'
-                     .format(mp1_1, mp1_2, mp1_3, mp2_1, mp2_2, mp2_3, mp3_1, mp3_2, mp3_3))
+                     .format(mp1_1, mp1_2, mp1_3, mp2_1, mp2_2, mp2_3, mp3_1, mp3_2, mp3_3), file=f)
 
         print('train policy network ...')
 
@@ -302,8 +302,8 @@ class Train(object):
                                                              (args.nlevels - 1) * np.ones([args.batch_size, sel_blocks, 1, 1, 1], np.float32))
                     print('Epoch {:03d}, cifar: {:.4f} ({:.4f}), tiny: {:.4f} ({:.4f}), stl: {:.4f} ({:.4f})'
                           .format(step // args.num_batches, cifar_acc, cifar_comp, tiny_acc, tiny_comp, stl_acc, stl_comp))
-                    print >> f, ('Epoch {:03d}, cifar: {:.4f} ({:.4f}), tiny: {:.4f} ({:.4f}), stl: {:.4f} ({:.4f})'
-                                 .format(step // args.num_batches, cifar_acc, cifar_comp, tiny_acc, tiny_comp, stl_acc, stl_comp))
+                    print('Epoch {:03d}, cifar: {:.4f} ({:.4f}), tiny: {:.4f} ({:.4f}), stl: {:.4f} ({:.4f})'
+                                 .format(step // args.num_batches, cifar_acc, cifar_comp, tiny_acc, tiny_comp, stl_acc, stl_comp), file=f)
                     if mp1_1 < cifar_acc:
                         mp1_1 = cifar_acc
                         mp1_2 = tiny_acc
@@ -370,12 +370,12 @@ class Train(object):
               .format(mp1_1, mc1_1, mp1_2, mc1_2, mp1_3, mc1_3,
                       mp2_1, mc2_1, mp2_2, mc2_2, mp2_3, mc2_3,
                       mp3_1, mc3_1, mp3_2, mc3_2, mp3_3, mc3_3))
-        print >> f, ('max_performance: {:.4f} ({:.4f}) / {:.4f} ({:.4f}) / {:.4f} ({:.4f}) \n'
+        print('max_performance: {:.4f} ({:.4f}) / {:.4f} ({:.4f}) / {:.4f} ({:.4f}) \n'
                      '                 {:.4f} ({:.4f}) / {:.4f} ({:.4f}) / {:.4f} ({:.4f}) \n'
                      '                 {:.4f} ({:.4f}) / {:.4f} ({:.4f}) / {:.4f} ({:.4f})'
                      .format(mp1_1, mc1_1, mp1_2, mc1_2, mp1_3, mc1_3,
                              mp2_1, mc2_1, mp2_2, mc2_2, mp2_3, mc2_3,
-                             mp3_1, mc3_1, mp3_2, mc3_2, mp3_3, mc3_3))
+                             mp3_1, mc3_1, mp3_2, mc3_2, mp3_3, mc3_3), file=f)
 
     # Helper functions
     def full_validation(self, loss, acc, sess, id, vali_data32, vali_data64, vali_data96, vali_labels, comp):

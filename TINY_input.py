@@ -4,7 +4,7 @@ import numpy as np
 IMAGE_W = 64
 IMAGE_H = 64
 IMAGE_D = 3
-dataset_root = '../imagenet-tiny'
+dataset_root = '/home/ShiMengnan/Dataset/tiny-imagenet-200'
 
 
 def read_train_data():

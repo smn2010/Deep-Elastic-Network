@@ -17,9 +17,9 @@ WIDTH = 96
 DEPTH = 3
 SIZE = HEIGHT * WIDTH * DEPTH
 
-DATA_DIR = '../STL'
-DATA_URL = 'http://ai.stanford.edu/~acoates/stl10/stl10_binary.tar.gz'
-DATA_PATH = '../STL/stl10_binary/'
+##DATA_DIR = '../STL'
+##DATA_URL = 'http://ai.stanford.edu/~acoates/stl10/stl10_binary.tar.gz'
+DATA_PATH = '/home/ShiMengnan/Dataset/stl10_binary/'
 
 
 def read_train_data():

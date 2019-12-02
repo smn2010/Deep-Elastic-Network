@@ -84,7 +84,7 @@ def residual_block(input_layer, output_channel, keep, lv=3, first_block=False):
     with tf.variable_scope('conv1_in_block'):
         if first_block:
             conv_list = []
-            for i in xrange(lv):
+            for i in range(lv):
                 if i is 0:
                     r = int(output_channel / pow(2, lv - i - 1))
                 else:
@@ -95,8 +95,8 @@ def residual_block(input_layer, output_channel, keep, lv=3, first_block=False):
                     conv_list.append(conv1)
             conv1 = tf.concat(conv_list, 3)
         else:
-            conv_list = []
-            for i in xrange(lv):
+            conv_list = [] 
+            for i in range(lv):
                 if i is 0:
                     r = int(output_channel / pow(2, lv - i - 1))
                 else:

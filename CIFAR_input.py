@@ -1,7 +1,7 @@
 import numpy as np
 
-full_data_dir = '../cifar100/cifar-100-python/train'
-vali_dir = '../cifar100/cifar-100-python/test'
+full_data_dir = '/home/ShiMengnan/Dataset/cifar-100-python/train'
+vali_dir = '/home/ShiMengnan/Dataset/cifar-100-python/test'
 DATA_URL = 'http://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz'
 
 IMG_WIDTH = 32
@@ -14,7 +14,7 @@ EPOCH_SIZE = 50000 * NUM_TRAIN_BATCH
 
 
 def _read_one_batch(path):
-    dicts = np.load(path, encoding='latin1')
+    dicts = np.load(path, allow_pickle=True, encoding='latin1')
 
     data = dicts['data']
     label = np.array(dicts['fine_labels'])
